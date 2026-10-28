@@ -10,8 +10,8 @@ Cada notebook sigue la misma estructura: **reproducir el problema → medir su i
 | 2 | [Class imbalance](Practica_2_class_imbalance.ipynb) | Clase minoritaria < 10 % | Sin corrección: accuracy **0,93** pero recall de la minoría **0** y MCC 0. Con `class_weight='balanced'`: recall **0,72**, MCC 0,15 |
 | 3 | [Missing data](Practica_3_missing_data.ipynb) | MCAR, MAR y MNAR (Little & Rubin) | Con MNAR ninguna imputación alcanza; agregar un **indicador de ausencia** baja el MAE de 10,30 a **10,16** y supera al baseline sin faltantes |
 | 4 | [Outliers](Practica_4_outliers.ipynb) | Efecto sobre MSE/RMSE, modelos robustos | Huber y Random Forest reducen el MAE (9,40 y 9,67 contra 10,53 de la regresión lineal); el ratio RMSE/MAE delata la presencia de outliers |
-| 5 | [Multicolinealidad](Practica_5_multicolinealidad.ipynb) | VIF, Ridge, Lasso, maldición de la dimensionalidad | 11 de 12 variables con **VIF > 10** (máx. 51). Lasso conserva las 12 features reales y descarta las **100 de ruido** |
-| 6 | [Data bias](Practica_6_data_bias.ipynb) | Sesgo de muestreo, métricas desagregadas, fairness | Métricas por ámbito (urbano/rural), Demographic Parity, Equal Opportunity y FPR por grupo |
+| 5 | [Multicolinealidad](Practica_5_multicolinealidad.ipynb) | VIF, Ridge, Lasso, maldición de la dimensionalidad | 11 de 12 variables con **VIF > 10**. Sin regularizar, el 13 % de los coeficientes cambia de signo entre submuestras; Ridge baja su desvío de 1,06 a **0,14**. Con 100 features de ruido el R² de test cae a 0,35, y Lasso lo recupera a **0,81** descartando todo el ruido |
+| 6 | [Data bias](Practica_6_data_bias.ipynb) | Sesgo de muestreo, métricas desagregadas, fairness | Subrepresentar escuelas rurales casi no cambia el AUC global (0,729 → 0,723), pero la brecha de **Equal Opportunity** entre urbanas y rurales sube de 0,16 a **0,21** |
 
 ## Qué muestra este repo
 
